@@ -14,7 +14,6 @@
         navigator.serviceWorker.register('sw.js');
 
         window.addEventListener('beforeinstallprompt', event => {
-          event.prompt();
           var button = document.querySelector('button');
           button.removeAttribute('hidden');
           button.addEventListener('click', () => {
