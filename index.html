@@ -16,10 +16,14 @@
       }
 
       let deferredPromt;
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) deferredPromt.prompt();
+      }
+      );
+
         window.addEventListener('beforeinstallprompt', event => {
           event.preventDefault();
           deferredPromt = event;
-          setTimeout(()=> {deferredPromt.prompt(); deferredPromt = null;}, 250);
         });
     </script>
   </body>
