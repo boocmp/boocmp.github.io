@@ -19,20 +19,7 @@
         window.addEventListener('beforeinstallprompt', event => {
           event.preventDefault();
           deferredPromt = event;
-          var button1 = document.querySelector('#one');
-          button1.removeAttribute('hidden');
-          button1.addEventListener('click', () => {
-            deferredPromt.prompt();
-            button1.setAttribute('hidden', true);
-            deferredPromt = null;
-          });
-          var button2 = document.querySelector('#two');
-          button2.removeAttribute('hidden');
-          button2.addEventListener('click', () => {
-            event.prompt();
-            button2.setAttribute('hidden', true);
-            event = null;
-          });
+          setTimeout(()=> {deferredPromt.prompt(); deferredPromt = null;}, 250);
         });
     </script>
   </body>
