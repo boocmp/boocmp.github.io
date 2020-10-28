@@ -8,7 +8,8 @@
       If the <code>beforeinstallprompt</code> event fires, there will be a button displayed allowing
       you to use <code>prompt()</code> on the deferred event.
     </p>
-    <button hidden>Show Prompt</button>
+    <button id="one" hidden>Show Prompt 1</button>
+    <button id="two" hidden>Show Prompt 2</button>
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js');
@@ -18,12 +19,18 @@
         window.addEventListener('beforeinstallprompt', event => {
           event.preventDefault();
           deferredPromt = event;
-          var button = document.querySelector('button');
-          button.removeAttribute('hidden');
-          button.addEventListener('click', () => {
+          var button1 = document.querySelector('one');
+          button1.removeAttribute('hidden');
+          button1.addEventListener('click', () => {
             deferredPromt.prompt();
-            button.setAttribute('hidden', true);
+            button1.setAttribute('hidden', true);
             deferredPromt = null;
+          });
+          var button2 = document.querySelector('two');
+          button2.removeAttribute('hidden');
+          button2.addEventListener('click', () => {
+            event.prompt();
+            button2.setAttribute('hidden', true);
           });
         });
     </script>
