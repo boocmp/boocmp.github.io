@@ -1,2 +1,0 @@
-# boocmp.github.io
-sooqa
