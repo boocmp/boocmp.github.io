@@ -1,0 +1,15 @@
+{
+  "name": "Installable web app",
+  "icons": [
+   {
+      "src": "image-512px.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "index.html",
+  "scope": "/",
+  "display": "standalone",
+  "yandex.open_mode":  "singlewindow",
+  "yandex.allowed_scopes": ["https://valid_pwa*/scope*"]
+}
