@@ -8,7 +8,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./",
-  "scope": "/",
+  "start_url": "/user_gesture/index.html",
+  "scope": "/user_gesture/",
   "display": "standalone"
 }

@@ -8,7 +8,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./",
-  "scope": "/",
+  "start_url": "/default_show_2/index.html",
+  "scope": "/default_show_2/",
   "display": "standalone"
 }

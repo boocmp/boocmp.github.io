@@ -8,7 +8,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./",
-  "scope": "/",
+  "start_url": "/not_in_whitelist/index.html",
+  "scope": "/not_in_whitelist/",
   "display": "standalone"
 }
