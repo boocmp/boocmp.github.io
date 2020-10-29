@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Default Show 1</title>
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <p>
+      preventDefault and wait for button click.
+    </p>
+    <button disabled>Show prompt</button>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js');
+      }
+      let de;
+      window.addEventListener('beforeinstallprompt', event => {
+        event.preventDefault();
+        de = event;
+        var button = document.querySelector('button');
+        button.removeAttribute('disabled');
+        button.addEventListener('onclick', e => {
+          de.prompt();
+          button.setAttribute('disabled', true);
+          de = null;
+        });
+      });
+    </script>
+  </body>
+</html>

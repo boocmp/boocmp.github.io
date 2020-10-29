@@ -1,10 +1,10 @@
 {
-  "short_name": "PWA Test",
-  "name": "PWA Test",
+  "short_name": "User gesture",
+  "name": "User gesture",
   "icons": [
     {
-      "src": "image-512px.png",
-      "sizes": "512x512",
+      "src": "icon.png",
+      "sizes": "256x256",
       "type": "image/png"
     }
   ],

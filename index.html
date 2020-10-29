@@ -1,28 +1,11 @@
 <html>
   <head>
-    <title>Test</title>
-    <link rel="manifest" href="manifest.json">
+    <title>Test OnBeforeInstallPrompt</title>
   </head>
   <body>
-    <p>
-      If the <code>beforeinstallprompt</code> event fires, there will be a button displayed allowing
-      you to use <code>prompt()</code> on the deferred event.
-    </p>
-    <button id="one" hidden>Show Prompt 1</button>
-    <button id="two" hidden>Show Prompt 2</button>
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js');
-      }
-
-      let deferredPromt;
-document.addEventListener("click", function(){
-  deferredPromt.prompt();
-});
-        window.addEventListener('beforeinstallprompt', event => {
-          event.preventDefault();
-          deferredPromt = event;
-        });
-    </script>
+    <a href="./default_show_1/index.html" target="_blank">Default Show 1</a><br>
+    <a href="./default_show_2/index.html" target="_blank">Default Show 2</a><br>
+    <a href="./not_in_whitelist/index.html" target="_blank">Default Show Not in whitelist</a><br>
+    <a href="./user_gesture/index.html" target="_blank">User gesture</a><br>
   </body>
 </html>
