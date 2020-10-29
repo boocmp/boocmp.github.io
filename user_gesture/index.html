@@ -18,7 +18,7 @@
         de = event;
         var button = document.querySelector('button');
         button.removeAttribute('disabled');
-        button.addEventListener('onclick', e => {
+        button.addEventListener('click', e => {
           de.prompt();
           button.setAttribute('disabled', true);
           de = null;
