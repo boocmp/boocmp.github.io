@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Default Show 1</title>
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <p>
+      No preventDefault.
+    </p>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js');
+      }
+      window.addEventListener('beforeinstallprompt', event => {});
+    </script>
+  </body>
+</html>

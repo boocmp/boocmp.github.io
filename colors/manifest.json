@@ -1,0 +1,16 @@
+{
+  "short_name": "Colored",
+  "name": "Colored",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/colors/index.html",
+  "scope": "/colors/",
+  "display": "standalone",
+  "theme_color" : "red",
+  "background_color" : "green"
+}
