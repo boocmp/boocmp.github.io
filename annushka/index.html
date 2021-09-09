@@ -5,8 +5,13 @@
   </head>
   <body>
     <p>
+      <button onclick="click"> push me and then just touch me, till i can get my satisfaction, Annushka! </button>
     </p>
     <script>
+      function click() {
+         navigator.serviceWorker.controller.postMessage({});
+      }
+
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js');
       }
