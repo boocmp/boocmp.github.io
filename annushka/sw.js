@@ -10,6 +10,7 @@ self.addEventListener('install', e => {
       }),
   );
 
+  console.log("123");
   yandex.publicFeature.getWallpaperInfo(function(info) {
     if (chrome.runtime.lastError) {
       console.error("oops " + chrome.runtime.lastError.message);
