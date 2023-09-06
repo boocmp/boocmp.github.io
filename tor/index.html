@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>A Malicious Website</title>
+        <script>
+            function spamUsers() {
+                for (let i = 0; i < 30; i++) { document.location.href = 'hxxp://ljsdjfl' + i + '.onion'; }
+            }            
+        </script>
+    </head>
+    <body>
+        <button onclick="spamUsers()">Start</button>
+    </body>
+</html>
