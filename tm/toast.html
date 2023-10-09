@@ -1,0 +1,41 @@
+<style include="cr-shared-style">
+  #errorMessage {
+    align-items: center;
+    background: rgb(255, 225, 147);
+    border-radius: 8px;
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    gap: 16px;
+    height: 68px;
+    left: 320px;
+    line-height: 24px;
+    padding: 16px;
+    position: absolute;
+    top: 62px;
+    width: 726px;
+  }
+
+  .exclamation-icon {
+    background-image: url(images/warning_triangle.svg);
+    width: 20px;
+    height: 20px;
+  }
+
+  .close {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    margin-left: auto;
+    padding: 9px 12px;
+    cursor: pointer;
+  }
+</style>
+
+
+<div id="errorMessage">
+  <div class="exclamation-icon"></div>
+  <div>Could not fetch data from the Chrome Web Store </div>
+  <div class="close">Close</div>
+</div>

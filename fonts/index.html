@@ -1,35 +1,610 @@
-<html>
-  <head>
-    <title>Fonts</title>
-     
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-     <link href="https://fonts.googleapis.com/css2?family=Manrope:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <style>
-
-@font-face {
-    font-family: 'Poppins1';
-    src: url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Poppins';
-  src: url(https://fonts.gstatic.com/s/manrope/v11/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk79FN_G-bnBeA.woff2) format('woff2');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  <style id="brave_speedreader_style">h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
 }
 
-@font-face { font-family: Poppins; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/poppins/v19/pxiEyp8kv8JHgFVrJJbecmNE.woff2") format("woff2"); unicode-range: U+900-97F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB; }
+h1 {
+  font-style: normal;
+  font-size: 2.25rem;
+  line-height: 3rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
 
-      body {
-        font-family: 'Poppins', 'Arial Black' ;
-      }
-    </style>
-  </head>
-  <body>
-    <p>Some latin text</p>
-    <p>Текст текст текст</p>
-    <p> Text Текст </p>
-  </body>
-</html>
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.4rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  line-height: 1rem;
+}
+
+h4, h5, h6 {
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+}
+
+p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+li {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.subhead {
+  font-weight: normal;
+}
+
+.subhead, .subheading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--summary-text-color);
+}
+
+.metadata * {
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+
+  color: var(--summary-text-color);
+
+  margin-top: -0.25rem;
+}
+
+.author {
+  display: block;
+}
+
+.author::before {
+  content: "";
+  display: inline-block;
+  width: 1.575rem;
+  height: 1rem;
+  vertical-align: -0.175rem;
+  margin-left: 0.125rem;
+
+  background-color: var(--summary-text-color);
+  -webkit-mask-size: 0.90rem;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: left;
+  -webkit-mask-image: url("data:image/svg+xml,%0A%3Csvg width='15' height='18' viewBox='0 0 15 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.7169 7.78005C13.7085 7.78771 13.6981 7.7905 13.6904 7.79746C13.6834 7.80512 13.6813 7.81487 13.6744 7.82184L8.02235 13.4751C8.01956 13.4779 8.01538 13.4786 8.01259 13.4814C7.99099 13.503 7.96033 13.5142 7.93524 13.533C7.88506 13.5699 7.83558 13.6089 7.77913 13.6305C7.77773 13.6312 7.77704 13.6326 7.77494 13.6333L5.43818 14.5109C5.35873 14.5409 5.27649 14.5555 5.19426 14.5555C5.01375 14.5555 4.83604 14.4845 4.70293 14.3521C4.51058 14.1592 4.44855 13.8722 4.54403 13.6165L5.42215 11.2803C5.42354 11.2775 5.42633 11.2754 5.42703 11.2726C5.44097 11.2378 5.46814 11.2092 5.48696 11.1765C5.51554 11.1291 5.53993 11.0783 5.57756 11.04C5.57895 11.0386 5.57965 11.0365 5.58105 11.0351L11.2338 5.37969C11.2414 5.37203 11.2519 5.36994 11.2602 5.36228C11.2665 5.35601 11.2679 5.34695 11.2749 5.34068C11.6003 5.01399 12.0345 4.83358 12.4952 4.83358C12.4959 4.83358 12.4959 4.83358 12.4959 4.83358C12.9572 4.83358 13.3914 5.0133 13.7176 5.33999C14.043 5.66598 14.2221 6.09994 14.2221 6.56036C14.2221 7.02219 14.0423 7.45475 13.7169 7.78005ZM12.7349 6.32145C12.6485 6.23507 12.5481 6.22184 12.4959 6.22184C12.4443 6.22184 12.3439 6.23507 12.2589 6.32145C12.2505 6.3298 12.2394 6.33189 12.2303 6.33956C12.2241 6.34652 12.2227 6.35558 12.2157 6.36185L6.66893 11.9114L6.38319 12.6727L7.14841 12.385L12.6924 6.84039C12.7001 6.83203 12.7105 6.82994 12.7189 6.82228C12.7258 6.81461 12.7279 6.80486 12.7356 6.7979C12.8206 6.71222 12.8332 6.61261 12.8332 6.56037C12.8332 6.50812 12.8206 6.40712 12.7349 6.32145ZM12.1384 4.13912C11.755 4.13912 11.4435 3.82845 11.4435 3.44464V2.0557H5.8626V5.53155C5.8626 5.91535 5.57756 6.22323 5.19426 6.22323H1.68109V15.98H11.438L11.4435 11.7776C11.4435 11.3945 11.755 11.0832 12.1384 11.0832C12.5217 11.0832 12.8325 11.3945 12.8325 11.7776V16.1298C12.8325 16.7929 12.2945 17.3334 11.6331 17.3334H1.53265C0.871273 17.3334 0.333252 16.7929 0.333252 16.1298V5.52876C0.333252 5.51343 0.340918 5.5009 0.342312 5.48557C0.345796 5.42288 0.358341 5.36158 0.379249 5.30168C0.386915 5.28009 0.39249 5.2578 0.402247 5.2369C0.435699 5.16446 0.478211 5.09619 0.536752 5.03699L4.70293 0.870145H4.70363C4.76217 0.810937 4.83116 0.768446 4.90434 0.734315C4.92385 0.725956 4.94407 0.720383 4.96428 0.713418C5.0256 0.691128 5.08902 0.67859 5.15384 0.675107C5.16778 0.67441 5.18032 0.666748 5.19426 0.666748H11.6331C12.2945 0.666748 12.8325 1.20728 12.8325 1.87041V3.44464C12.8325 3.82845 12.5217 4.13912 12.1384 4.13912ZM4.49943 4.83359V3.03785L2.70417 4.83359H4.49943Z' fill='%23495057'/%3E%3C/svg%3E%0A");
+}
+
+.date {
+  display: inline-block;
+  margin-bottom: -0.35rem;
+}
+
+.date::before {
+  content: "";
+  display: inline-block;
+  width: 1.75rem;
+  height: 1rem;
+  vertical-align: -0.175rem;
+
+  background-color: var(--summary-text-color);
+  -webkit-mask-size: 1.15rem;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: left;
+  -webkit-mask-image: url("data:image/svg+xml,%0A%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.66675 10.0001C1.66675 14.6025 5.39771 18.3334 10.0001 18.3334C14.6025 18.3334 18.3334 14.6025 18.3334 10.0001C18.3334 5.39771 14.6025 1.66675 10.0001 1.66675C5.39771 1.66675 1.66675 5.39771 1.66675 10.0001ZM16.9445 10.0001C16.9445 13.8354 13.8354 16.9445 10.0001 16.9445C6.16477 16.9445 3.05564 13.8354 3.05564 10.0001C3.05564 6.16477 6.16477 3.05564 10.0001 3.05564C13.8354 3.05564 16.9445 6.16477 16.9445 10.0001ZM11.1106 10.0001C10.998 9.80545 10.8357 9.64317 10.6411 9.53058V6.79495C10.6411 6.44092 10.3541 6.15392 10.0001 6.15392C9.64604 6.15392 9.35904 6.44092 9.35904 6.79495V9.53056C8.97583 9.75223 8.718 10.1666 8.718 10.6411C8.718 11.3492 9.292 11.9232 10.0001 11.9232C10.4746 11.9232 10.8889 11.6653 11.1106 11.2821H14.4872C14.8413 11.2821 15.1283 10.9951 15.1283 10.6411C15.1283 10.2871 14.8413 10.0001 14.4872 10.0001H11.1106Z' fill='%23495057'/%3E%3C/svg%3E%0A");
+}
+
+.show_original {
+  display: flex;
+  float: right;
+  color: var(--link-color);
+  cursor: pointer;
+}
+
+.show_original::before {
+  content: "";
+  display: inherit;
+  width: 1.85rem;
+  height: 1rem;
+  padding-top: 0.625rem;
+
+  background-color: var(--link-color);
+  -webkit-mask-size: 1.15rem;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: left; 
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.72846 13.2803L9.2585 6.6424L9.25981 6.64051C9.3774 6.4715 9.59417 6.15996 9.40038 5.81406C9.32887 5.68735 9.14636 5.47469 8.72644 5.47469H6.39968L7.63704 1.07463C7.65535 1.00542 7.65535 0.936202 7.6462 0.869779C7.64048 0.711256 7.57182 0.556082 7.42994 0.450586C7.17764 0.26248 6.8115 0.304902 6.61297 0.546593L0.939974 7.47582L0.939008 7.47719C0.854502 7.5969 0.602077 7.95449 0.807817 8.32426C0.881047 8.45599 1.06698 8.67703 1.4892 8.67703L4.16894 8.67758L3.61972 12.9393C3.61679 12.9525 3.6155 12.9654 3.61421 12.9785C3.61348 12.9858 3.61274 12.9932 3.61171 13.0007L3.60656 13.0448C3.6041 13.0636 3.60681 13.0814 3.60954 13.0993C3.61126 13.1106 3.61298 13.1219 3.61342 13.1335C3.61443 13.1401 3.61466 13.1468 3.61489 13.1535C3.6152 13.1622 3.6155 13.1708 3.61743 13.1793C3.64947 13.4249 3.84284 13.6309 4.11287 13.6621C4.1369 13.6655 4.16093 13.6666 4.18496 13.6666C4.43668 13.6666 4.65065 13.5064 4.72846 13.2803ZM5.46601 6.27402C5.64279 6.47385 5.88422 6.58325 6.14567 6.58325H7.90604L5.07287 10.7641L5.36121 8.52522C5.41956 8.18139 5.27596 7.95923 5.185 7.85708C5.01394 7.66507 4.76107 7.56795 4.4344 7.56795H2.33935L5.88411 3.23983L5.22058 5.40661C5.16623 5.7097 5.26062 6.04238 5.46601 6.27402ZM9.896 1.29158C9.5048 1.29158 9.18766 1.60871 9.18766 1.99991C9.18766 2.39111 9.5048 2.70825 9.896 2.70825L16.5627 2.70825C16.9539 2.70825 17.271 2.39112 17.271 1.99991C17.271 1.60871 16.9539 1.29158 16.5627 1.29158L9.896 1.29158ZM10.8543 5.33325C10.8543 4.94205 11.1715 4.62491 11.5627 4.62491L16.5627 4.62491C16.9539 4.62491 17.271 4.94205 17.271 5.33325C17.271 5.72445 16.9539 6.04158 16.5627 6.04158L11.5627 6.04158C11.1715 6.04158 10.8543 5.72445 10.8543 5.33325ZM7.521 11.9999C7.521 11.6087 7.83813 11.2916 8.22933 11.2916L16.5627 11.2916C16.9539 11.2916 17.271 11.6087 17.271 11.9999C17.271 12.3911 16.9539 12.7082 16.5627 12.7082L8.22933 12.7082C7.83813 12.7082 7.521 12.3911 7.521 11.9999ZM9.60433 8.66658C9.60433 8.27538 9.92146 7.95825 10.3127 7.95825H16.5627C16.9539 7.95825 17.271 8.27538 17.271 8.66658C17.271 9.05778 16.9539 9.37491 16.5627 9.37491H10.3127C9.92146 9.37491 9.60433 9.05778 9.60433 8.66658Z' fill='%234C54D2' /%3E%3C/svg%3E");
+}
+
+.metadata :matches(ul, ol, li) {
+  list-style-type: none;
+  -webkit-padding-start: 0;
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-color: inherit;
+}
+
+a[href] {
+  color: var(--link-color);
+}
+
+#article {
+  text-rendering: optimizeLegibility;
+  user-select: unset;
+}
+
+#article * {
+  /* Scale down anything larger than our view. Max-width maintains aspect ratios on images. */
+  max-width: 100%;
+}
+
+#article img {
+  /* By default, images are centered on their own line. */
+  margin-bottom: 0.5rem;
+  display: block;
+  height: auto;
+}
+
+#article img.reader-image-tiny {
+  display: inline;
+  margin: 0;
+}
+
+#article .leading-image, figure, .auxiliary {
+  margin-bottom: 1.15rem;
+}
+
+#article .leading-image img {
+  margin: auto;
+  display: block;
+  clear: both;
+}
+
+#article .leading-image .credit {
+  margin: 0;
+}
+
+#article .leading-image, #article figure {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+body {
+  background-color: var(--article-background-color);
+  color: var(--article-text-color);
+  padding-left: 120px !important;
+  padding-right: 120px !important;
+}
+
+body.watch #article .leading-image,
+body.watch #article figure {
+  font-size: 0.8125rem;
+}
+
+#article .leading-image :matches(.caption, .credit), #article figcaption {
+  margin-top: 0.8rem;
+}
+
+#article figcaption>* {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+#article :matches(.leading-image, figure) p {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+#article .leading-image .credit+.caption {
+  margin-top: 0.1rem;
+}
+
+#article .auxiliary {
+  display: block;
+  clear: both;
+  font-size: 0.75rem;
+  line-height: 1.4rem;
+  text-align: start;
+}
+
+#article .pullquote {
+  font-size: 1.42rem;
+  line-height: 1.38rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+#article .pullquote:not(.float) {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  -webkit-margin-start: 1rem;
+  max-width: calc(100% - 1rem);
+}
+
+#article .auxiliary>*:not(img) {
+  -webkit-margin-start: 0;
+}
+
+#article .auxiliary.float img, #article .auxiliary>*:first-child:not(img) {
+  margin: 0;
+}
+
+
+article {
+  text-align: start;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+article.rtl {
+  direction: rtl;
+}
+
+
+/* If the element immediately after an image is inline, it might bump up against the image. */
+
+#article .auxiliary img+* {
+  display: block;
+}
+
+#article .auxiliary figcaption {
+  font-size: 100%;
+}
+
+#article .auxiliary * {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+body:not(.watch) #article .float.left {
+  float: left;
+  margin-right: 20px;
+}
+
+body:not(.watch) #article .float.right {
+  float: right;
+  margin-left: 20px;
+}
+
+body.watch #article .float {
+  width: auto !important;
+}
+
+#article .clear {
+  clear: both;
+}
+
+#article ul.list-style-type-none, #article ol.list-style-type-none, #article .list-style-type-none>li {
+  list-style-type: none;
+  -webkit-padding-start: 0;
+}
+
+#article div.scrollable {
+  overflow-x: scroll;
+  word-wrap: normal;
+}
+
+#article div.scrollable table {
+  max-width: none;
+}
+
+#article-summary {
+  font-size: 1.5rem;
+  line-height: 1.4rem;
+  color: var(--summary-text-color);
+}
+
+#article .leading-image,
+#article figure,
+#article .auxiliary,
+#article .pullquote {
+  color: var(--quote-text-color);
+}
+
+figure {
+  margin: 0;
+}
+
+body:not(.watch) figure:not(.float) {
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+
+hr {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 1.5rem 0 1.5rem;
+  padding: 0;
+  height: 1px;
+  border: none;
+  border-top: 1px solid var(--vertical-delemiter-color);
+}
+
+pre {
+  font-family: "Lucida Console", Courier, monospace;
+  font-size: 0.87rem;
+  line-height: 1.45rem;
+}
+
+pre,
+code {
+  white-space: pre-wrap;
+}
+
+blockquote,
+q {
+  color: var(--quote-text-color);
+}
+
+blockquote:not(.pullquote) {
+  margin-left: 2px;
+  margin-right: 6px;
+  padding-left: 16px;
+}
+
+blockquote:not(.simple):not(.pullquote) {
+  border-left: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+q.pullquote {
+  display: block;
+}
+
+.pullquote q::before, .pullquote q::after, q.pullquote::before, q.pullquote::after {
+  content: "";
+}
+
+/* Collapse excess whitespace. */
+
+article p>p:empty, article div>p:empty, article p>div:empty, article div>div:empty, article p+br, article img+br {
+  display: none;
+}
+
+article table {
+  font-size: 0.9rem;
+  text-align: start;
+  word-wrap: break-word;
+  border-collapse: collapse;
+}
+
+article table td, article table th {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgb(216, 216, 216);
+}
+
+.delimiter {
+  margin-left: 0.45rem;
+  margin-right: 0.45rem;
+  margin-top: 0.07rem;
+  padding: 0;
+}
+
+.metadata.singleline .delimiter::after {
+  content: "•";
+}
+
+.metadata:not(.singleline) .delimiter {
+  content: "";
+  display: block !important;
+}
+
+article table th {
+  background-color: var(--article-background-color);
+}
+
+article sup, article sub {
+  line-height: 1;
+  font-size: 0.75rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: none;
+  }
+
+  body.mac {
+    background-color: transparent;
+  }
+
+  #article {
+    pointer-events: auto;
+    overflow: visible;
+  }
+
+  #article:focus {
+    outline: none;
+  }
+
+  #article {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4.5rem;
+    padding-bottom: 35px;
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  body article {
+    padding: 0 4px;
+  }
+
+  #article {
+    margin-top: 0;
+    border-top: none;
+  }
+
+  #article:last-of-type {
+    padding-bottom: 45px;
+  }
+
+  article video {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
+
+#article .extendsBeyondTextColumn {
+  max-width: none;
+}
+
+.iframe-wrapper {
+  background-color: black;
+  max-width: none;
+  text-align: center;
+}
+
+iframe {
+  border: 0;
+}
+
+@media only screen and (min-width: 780px) {
+  #article {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Readable margins. */
+  /* body #article {
+    max-width: 83.2ex;
+  } */
+}
+
+/* Use slightly smaller page padding when vertically constrained. */
+
+@media screen and (max-height: 700px) {
+  #article {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    --background-color: #17171F;
+    --article-background-color: #1E2029;
+    --summary-text-color: #C2C4CF;
+    --article-text-color: #F0F2FF;
+    --quote-text-color: #C2C4CF;
+    --vertical-delemiter-color: #3B3E4F;
+    --link-color: #737ADE;
+  }
+}
+
+html,
+html[data-theme='light'] {
+  --font-size-percentage: 100;
+  --background-color: #F8F9FA;
+  --article-background-color: #FFFFFF;
+  --summary-text-color: #495057;
+  --article-text-color: #212529;
+  --quote-text-color: rgba(0, 0, 0, 0.65);
+  --vertical-delemiter-color: #E9E9F4;
+  --link-color: #4C54D2;
+
+  background-color: var(--background-color);
+}
+
+html[data-theme='sepia'] {
+  --background-color: #E9E0CA;
+  --article-background-color: #F2EBD9;
+  --summary-text-color: #5B4635;
+  --article-text-color: #331E05;
+  --quote-text-color: rgba(0, 0, 0, 0.65);
+  --vertical-delemiter-color: #DAD1BB;
+  --link-color: #4C54D2;
+}
+
+html[data-theme='dark'] {
+  --background-color: #17171F;
+  --article-background-color: #1E2029;
+  --summary-text-color: #C2C4CF;
+  --article-text-color: #F0F2FF;
+  --quote-text-color: #C2C4CF;
+  --vertical-delemiter-color: #3B3E4F;
+  --link-color: #737ADE;
+}
+
+html[data-font-size="50"] {
+  font-size: 50%;
+}
+
+html[data-font-size="60"] {
+  font-size: 60%;
+}
+
+html[data-font-size="70"] {
+  font-size: 70%;
+}
+
+html[data-font-size="80"] {
+  font-size: 80%;
+}
+
+html[data-font-size="90"] {
+  font-size: 90%;
+}
+
+html[data-font-size="100"] {
+  font-size: 100%;
+}
+
+html[data-font-size="110"] {
+  font-size: 110%;
+}
+
+html[data-font-size="120"] {
+  font-size: 120%;
+}
+
+html[data-font-size="130"] {
+  font-size: 130%;
+}
+
+html[data-font-size="140"] {
+  font-size: 140%;
+}
+
+html[data-font-size="150"] {
+  font-size: 150%;
+}
+
+html[data-font-family="sans"] {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+html[data-font-family="serif"] {
+  font-family: Georgia, serif;
+}
+
+html[data-font-family="mono"] {
+  font-family: Courier, monospace;
+}
+
+html[data-font-family="dyslexic"] {
+  font-family: 'OpenDyslexic', Comic Sans MS, Comic Sans, cursive, sans-serif;
+}
+
+html[data-content-style="text-only"] img {
+  display: none !important;
+}
+</style>
+  <link href="atkinson_hyperligible.css" rel="stylesheet">
+  <link href="opendyslexic.css" rel="stylesheet">
+
+  <html data-theme="light" data-font-family="sans" data-font-size="100"><title>Times/Siena Polls Show Democrats Slightly Ahead in Key Senate Races</title><meta charset="utf-8"/><body id="article"><h1 class="title metadata">Times/Siena Polls Show Democrats Slightly Ahead in Key Senate Races</h1><p class="subhead metadata">Respondents said they preferred Republicans to control the Senate, but individual matchups showed a different story.</p><hr class=""></hr><div class="metadata"><p class="author">By Nate Cohn</p><p class="date">Nov 09, 2022 10:40 PM</p><div class="show_original" id="c93e2206-2f31-4ddc-9828-2bb8e8ed940e"></div></div><hr class=""></hr><section class="meteredContent css-1r7ky0e" name="articleBody"><div><div class="css-79elbk" data-testid="photoviewer-wrapper"><div class="css-1a48zt4 e11si9ry5" data-testid="photoviewer-children"><figure aria-label="media" class="img-sz-medium css-d754w4 e1g7ppur0" role="group"><div class="css-1xdhyk6 erfvjey0"><p><span class="css-1ly73wi e1tej78p0">Image</span></p><picture><img alt="John Fetterman, left, holds a lead in our poll of the Pennsylvania Senate race, although most of the survey was held before his debate with Dr. Mehmet Oz." class="css-r3fift" decoding="async" height="400" sizes="((min-width: 600px) and (max-width: 1004px)) 84vw, (min-width: 1005px) 60vw, 100vw" src="https://static01.nyt.com/images/2022/10/31/multimedia/31up-debater1-1-c52b/31up-debater1-1-c52b-articleLarge.jpg?quality=75&amp;auto=webp&amp;disable=upscale" srcset="https://static01.nyt.com/images/2022/10/31/multimedia/31up-debater1-1-c52b/31up-debater1-1-c52b-articleLarge.jpg?quality=75&amp;auto=webp 600w,https://static01.nyt.com/images/2022/10/31/multimedia/31up-debater1-1-c52b/31up-debater1-1-c52b-jumbo.jpg?quality=75&amp;auto=webp 1024w,https://static01.nyt.com/images/2022/10/31/multimedia/31up-debater1-1-c52b/31up-debater1-1-c52b-superJumbo.jpg?quality=75&amp;auto=webp 2048w" width="600"></picture></div><figcaption class="css-xaa95i ewdxa0s0"><span aria-hidden="true" class="css-jevhma e13ogyst0">John Fetterman, left, holds a lead in our poll of the Pennsylvania Senate race, although most of the survey was held before his debate with Dr. Mehmet Oz.</span><span class="css-1u46b97 e1z0qqy90"><span class="css-1ly73wi e1tej78p0">Credit...</span><span><span aria-hidden="false">/EPA, via Shutterstock</span></span></span></figcaption></figure></div></div></div><div class="css-s99gbd StoryBodyCompanionColumn"><div class="css-53u6y8"><p class="css-at9mc1 evys1bk0"><em class="css-2fg4z9 e1gzwzxm0">Follow our </em><a class="css-yywogo" href="https://www.nytimes.com/live/2022/11/09/us/election-updates-results" title=""><em class="css-2fg4z9 e1gzwzxm0">live coverage of the 2022 midterm elections</em></a><em class="css-2fg4z9 e1gzwzxm0"> for the latest news and updates.</em></p><p class="css-at9mc1 evys1bk0">Eight days before the election, we have our final* midterm surveys: polls of the four states likeliest to determine control of the Senate.</p><p class="css-at9mc1 evys1bk0"><strong class="css-8qgvsz ebyp5n10">New York Times/Siena College polls</strong></p><p class="css-at9mc1 evys1bk0">All considered, this is a pretty good set of numbers for Democrats. If they win three of the four Senate seats, they hold the Senate if everywhere else goes as expected. Here, they lead in the magic three of four while remaining highly competitive in the fourth — though it’s very important to caution that most of this poll was taken <em class="css-2fg4z9 e1gzwzxm0">before</em> the Pennsylvania Senate debate.</p><p class="css-at9mc1 evys1bk0">There’s also a bit of good news for Republicans: Respondents said they preferred Republicans to control the Senate. Democrats led anyway, presumably because of their distaste for some of the Republican nominees or their affection for Democratic incumbents. As we head down the stretch, Republicans can hope to lure some of these voters to their side.</p><p class="css-at9mc1 evys1bk0"><strong class="css-8qgvsz ebyp5n10">How the polls compare</strong></p><p class="css-at9mc1 evys1bk0">If you compare our polls with the polling averages, they look even better for Democrats. Consider the <a class="css-yywogo" href="https://projects.fivethirtyeight.com/polls/" rel="noopener noreferrer" target="_blank" title="">current FiveThirtyEight averages</a>:</p><p class="css-at9mc1 evys1bk0">There is a twist: Although our polls may look better for Democrats than the average, they look about the same as the other traditional polls that used to be considered the gold standard in survey research, like ABC/Washington Post, CNN/SSRS, Fox News, NBC, the university survey houses, and so on.</p></div></div><div class="css-s99gbd StoryBodyCompanionColumn"><div class="css-53u6y8"><p class="css-at9mc1 evys1bk0">In many of these states, our surveys are the first such poll in weeks. Consider the last such polls in the four states, and how much better they look for Democrats than the average — and how similar they look to our survey:</p><ul class="css-1le37cb ez3869y0"><li class="css-o74qhc eoqvrfo0"><p class="css-1il0jfh evys1bk0">Arizona: CNN/SSRS showed Mr. Kelly +6 about a month ago, in a poll conducted from Sept. 26 to Oct. 2.</p></li><li class="css-o74qhc eoqvrfo0"><p class="css-1il0jfh evys1bk0">Nevada: USA Today/Suffolk showed Ms. Cortez Masto +2 in a poll taken from Oct. 4 to Oct. 7.</p></li><li class="css-o74qhc eoqvrfo0"><p class="css-1il0jfh evys1bk0">Georgia: Quinnipiac showed Mr. Warnock up seven, in a poll taken from Oct. 7 to Oct. 10.</p></li><li class="css-o74qhc eoqvrfo0"><p class="css-1il0jfh evys1bk0">Pennsylvania: <a class="css-yywogo" href="https://www.pennlive.com/news/2022/10/fetterman-leads-oz-gop-voters-dissatisfied-with-their-partys-candidates-fm-college-poll.html" rel="noopener noreferrer" target="_blank" title="">Franklin and Marshall showed</a> Mr. Fetterman +4 in a poll conducted from Oct. 14 to Oct. 23. In a survey fielded over a partly overlapping period, CNN/SSRS <a class="css-yywogo" href="https://www.cnn.com/2022/10/24/politics/cnn-poll-senate-races-wisconsin-pennsylvania" rel="noopener noreferrer" target="_blank" title="">showed</a> Mr. Fetterman up six from Oct. 13 to 17.</p></li></ul><p class="css-at9mc1 evys1bk0">The absence of surveys from reputable pollsters is remarkable. The drought is partly because of rising costs — our October national survey was eight times as expensive as our final polls in 2016, on a per-interview basis. But it’s also because of a crisis of confidence among the traditional pollsters — Times/Siena included — who don’t have a great explanation for the poor results in 2020 and are understandably treading a little lightly.</p><p class="css-at9mc1 evys1bk0">The flip side: Most of the polling over the last few weeks is coming from partisan outfits — usually Republican — or auto-dial firms. These polls are cheap enough to flood the zone, and many of them were emboldened by the 2020 election, when their final results came close to the election results even as other pollsters struggled.</p><p class="css-at9mc1 evys1bk0">A couple of the nontraditional firms are worth taking seriously — CBS/YouGov in particular — but a lot of the polls that are filling up the averages just aren’t underpinned by credible survey methods.</p><p class="css-at9mc1 evys1bk0">They may have come close to the results in 2020 — and could easily come close yet again 2022 — but it’s not because they have a representative sample of the population. Imagine, for instance, a poll that is subject to the same pro-Democratic bias as the higher-quality surveys, but simply doesn’t call cellphones and misses people under 35.</p><p class="css-at9mc1 evys1bk0">In that case, the headline results could be “right,” but it’s not because the pollster has some special sauce or has uncovered the secret to reaching Trump voters.</p></div></div><div class="css-s99gbd StoryBodyCompanionColumn"><div class="css-53u6y8"><p class="css-at9mc1 evys1bk0">To be clear: The point isn’t that our polls are right and the others are wrong. There’s plenty of reason to think Trump-era challenges still plague the survey industry. If so, the pollsters once considered gold standard may struggle yet again. And if so, the dearth of gold standard polls and the surge of partisan polling might just leave the polling averages closer to the results than the last election, even if it’s just as tough for pollsters as it was two years ago.</p><p class="css-at9mc1 evys1bk0">Right or wrong, there’s not much question that Democrats would hold a more comfortable lead in the Senate if the pollsters who dominated the averages in the past were a bigger part of the averages this year.</p><hr class="css-7ad88g e1mu4ftr0"><p class="css-at9mc1 evys1bk0"><strong class="css-8qgvsz ebyp5n10">Note:</strong> *We will have one last set of findings for you: the results of a multi-survey study of Wisconsin. This study began in September, so it won’t exactly count as a final poll. But hopefully it will shed some light on the challenges facing pollsters and maybe even offer a path forward. I started to dig into this data only yesterday — and progress has been slow — but my goal is to report a few preliminary findings before the election.</p></div></div></section></body></html>
