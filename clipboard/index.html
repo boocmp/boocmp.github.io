@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <style>
+        textarea {
+            width: 600px;
+            height: 120px;
+        }
+    </style>
+
+    <script>
+        function copy_from_text_area() {
+            const ta = document.getElementById("area_1")
+            ta.focus()
+            ta.select()
+            document.execCommand('copy')
+        }
+
+        function copy_from_temp() {
+            var textArea = document.createElement("textarea")
+
+            textArea.style.position = 'fixed'
+            textArea.style.top = 0
+            textArea.style.left = 0
+            textArea.style.width = '2em'
+            textArea.style.height = '2em'
+            textArea.style.padding = 0
+            textArea.style.border = 'none'
+            textArea.style.outline = 'none'
+            textArea.style.boxShadow = 'none'
+            textArea.style.background = 'transparent'
+            textArea.value = 'https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX'
+            document.body.appendChild(textArea)
+            textArea.focus()
+            textArea.select()
+
+            document.execCommand('copy')
+
+            document.body.removeChild(textArea)
+        }
+
+        async function navigator_copy() {
+            await navigator.clipboard.writeText('https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX')
+        }
+
+        function check() {
+            t = document.getElementById('check')
+            console.log('a')
+            txt = navigator.clipboard.readText().then(
+                (value) => {
+                    console.log('b')
+                    t.textContent = value
+                },
+                (e) => {
+                    console.log(e)
+                }
+            )
+        }
+
+        async function clear_cb() {
+            console.log('clear')
+            await navigator.clipboard.writeText('')
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <div>Ctrl+C from text area</div>
+        <div>
+            <textarea readonly="true">https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX</textarea>
+        </div>
+    </div>
+
+    <br />
+    <div>
+        <div>Copy from text area</div>
+        <div>
+            <textarea id="area_1" readonly="true">https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX</textarea>
+        </div>
+        <button onclick="copy_from_text_area()"> Copy </button>
+    </div>
+    <br />
+    <div>
+        <div>Navigator Clipboard API</div>
+        <button onclick="navigator_copy()"> Copy </button>
+    </div>
+
+    <br />
+    <div>
+        <div>Copy from temp element </div>
+        <button onclick="copy_from_temp()"> Copy </button>
+    </div>
+
+    <br />
+
+    <div>
+        <div> Current clipboard content </div>
+        <div><button onclick="check()"> Check clipboard </button>
+            <button onclick="clear_cb()"> Clear clipboard </button>
+        </div>
+        <textarea id="check" readonly="" true"> </textarea>
+    </div>
+
+    <br />
+
+    <div>
+        <div> Can paste here </div>
+        <textarea></textarea>
+    </div>
+</body>
+
+</html>
