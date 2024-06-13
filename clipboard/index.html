@@ -39,6 +39,14 @@
             document.body.removeChild(textArea)
         }
 
+        function copy_from_div() {
+            d = document.getElementById('text_div')
+
+            window.getSelection().selectAllChildren(d)
+            document.execCommand('copy')
+            window.getSelection().empty()
+        }
+
         async function navigator_copy() {
             await navigator.clipboard.writeText('https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX')
         }
@@ -90,8 +98,15 @@
 
     <br />
     <div>
-        <div>Copy from temp element </div>
+        <div>Copy from temp textarea </div>
         <button onclick="copy_from_temp()"> Copy </button>
+    </div>
+
+    <br />
+    <div>
+        <div>Copy from div </div>
+        <div id="text_div" tabindex="-1">https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX</div>
+        <button onclick="copy_from_div()"> Copy </button>
     </div>
 
     <br />
