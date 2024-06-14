@@ -9,12 +9,27 @@
     </style>
 
     <script>
+        function check() {
+            t = document.getElementById('check')
+            console.log('a')
+            txt = navigator.clipboard.readText().then(
+                (value) => {
+                    console.log('b')
+                    t.textContent = value
+                },
+                (e) => {
+                    console.log(e)
+                }
+            )
+        }
+
         function copy_from_text_area(name) {
             const ta = document.getElementById(name)
             ta.focus()
             ta.select()
             document.execCommand('copy')
-        }
+            check()
+	}
 
         function copy_from_temp() {
             var textArea = document.createElement("textarea")
@@ -37,6 +52,7 @@
             document.execCommand('copy')
 
             document.body.removeChild(textArea)
+            check()
         }
 
         function copy_from_div() {
@@ -45,24 +61,12 @@
             window.getSelection().selectAllChildren(d)
             document.execCommand('copy')
             window.getSelection().empty()
+            check()
         }
 
         async function navigator_copy() {
             await navigator.clipboard.writeText('https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX')
-        }
-
-        function check() {
-            t = document.getElementById('check')
-            console.log('a')
-            txt = navigator.clipboard.readText().then(
-                (value) => {
-                    console.log('b')
-                    t.textContent = value
-                },
-                (e) => {
-                    console.log(e)
-                }
-            )
+            check()
         }
 
         async function clear_cb() {
@@ -77,14 +81,20 @@
 
 <body>
     <div>
-        <div>Ctrl+C from text area</div>
+        <div>Ctrl+C from the text area</div>
+	<div>User action shouldn't be sanitaized</div>
         <div>
             <textarea readonly="true">https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX</textarea>
         </div>
     </div>
 
+    <br />
+    <br />
+
     <div>
         <div>Custom text: copy from text area</div>
+	<div>Put any text you want, then click 'Copy'. Data should be sanitized. </div>
+	<div> API: document.exec('copy') </div>
         <div>
             <textarea id="area_1">https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX</textarea>
         </div>
@@ -93,32 +103,45 @@
 
 
     <br />
+    <br />
     <div>
         <div>Copy from text area</div>
+	<div>Data should be sanitized. </div>
+	<div>API: document.exec('copy') </div>
         <div>
             <textarea id="area_2" readonly="true">https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX</textarea>
         </div>
         <button onclick="copy_from_text_area('area_2')"> Copy </button>
     </div>
+
+    <br />
     <br />
     <div>
         <div>Navigator Clipboard API</div>
+	<div>https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX</div>
+	<div>API: navigator.clipboard.writeText </div>
         <button onclick="navigator_copy()"> Copy </button>
     </div>
 
     <br />
+    <br />
     <div>
-        <div>Copy from temp textarea </div>
+        <div>Copy from the temporary textarea</div>
+	<div>https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX</div>
+	<div>API: document.exec('copy') </div>	
         <button onclick="copy_from_temp()"> Copy </button>
     </div>
 
     <br />
+    <br />
     <div>
         <div>Copy from div </div>
         <div id="text_div" tabindex="-1">https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX</div>
+	<div>API: document.exec('copy') </div>	
         <button onclick="copy_from_div()"> Copy </button>
     </div>
 
+    <br />
     <br />
 
     <div>
@@ -126,13 +149,13 @@
         <div><button onclick="check()"> Check clipboard </button>
             <button onclick="clear_cb()"> Clear clipboard </button>
         </div>
-        <textarea id="check" readonly="" true"> </textarea>
+        <textarea id="check" readonly="true"> </textarea>
     </div>
 
     <br />
 
     <div>
-        <div> Can paste here </div>
+        <div> You can paste here </div>
         <textarea></textarea>
     </div>
 </body>
