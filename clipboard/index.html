@@ -9,8 +9,8 @@
     </style>
 
     <script>
-        function copy_from_text_area() {
-            const ta = document.getElementById("area_1")
+        function copy_from_text_area(name) {
+            const ta = document.getElementById(name)
             ta.focus()
             ta.select()
             document.execCommand('copy')
@@ -83,13 +83,22 @@
         </div>
     </div>
 
+    <div>
+        <div>Custom text: copy from text area</div>
+        <div>
+            <textarea id="area_1">https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX</textarea>
+        </div>
+        <button onclick="copy_from_text_area('area_1')"> Copy </button>
+    </div>
+
+
     <br />
     <div>
         <div>Copy from text area</div>
         <div>
-            <textarea id="area_1" readonly="true">https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX</textarea>
+            <textarea id="area_2" readonly="true">https://youtu.be/8AHCfZTRGiI?si=oLb865I64uJlLRJX</textarea>
         </div>
-        <button onclick="copy_from_text_area()"> Copy </button>
+        <button onclick="copy_from_text_area('area_2')"> Copy </button>
     </div>
     <br />
     <div>
