@@ -1,0 +1,29 @@
+<html>
+  <body>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const host = urlParams.get("host");
+      if (host) {
+        const options = {
+          publicKey: {
+            challenge: new Uint8Array([1, 2, 3, 4]),
+            rp: { name: "poc", id: host },
+            user: {
+              id: new Uint8Array([1, 2, 3, 4]),
+              name: "poc",
+              displayName: "poc",
+            },
+            pubKeyCredParams: [{ type: "public-key", alg: -7 }],
+          },
+        };
+
+        navigator.credentials
+          .create(options)
+          .then((cred) => console.log("created", cred))
+          .catch((err) => console.log("Error:", err));
+      } else {
+        console.log("No host parameter found in URL");
+      }
+    </script>
+  </body>
+</html>
