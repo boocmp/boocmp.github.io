@@ -64,16 +64,27 @@
       } catch {
         set_class('fail')
       }
-    }    
+    }
+    async function clk5() {
+      set_class();
+      console.log("Fetching localhost");
+      try {
+        await fetch("http://2130706433:5500/");
+        set_class('success')
+      } catch {
+        set_class('fail')
+      }
+    }            
   </script>
 </head>
 
 <body>
   <div id="result" class="none"></div>
-  <div><input type="button" onclick="clk()"> PNA </input></div>
+  <div><input type="button" onclick="clk()"> PNA1 </input></div>
   <div><input type="button" onclick="clk2()"> PNA2 </input></div>
   <div><input type="button" onclick="clk3()"> PNA3 </input></div>
-  <div><input type="button" onclick="clk4()"> PNA3 </input></div>
+  <div><input type="button" onclick="clk4()"> PNA4 </input></div>
+  <div><input type="button" onclick="clk5()"> PNA5 </input></div>
 </body>
 
 </html>
