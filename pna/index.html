@@ -2,29 +2,78 @@
 
 
 <head>
+  <style>
+    .none {
+      width: 100px;
+      height: 100px;
+      border: 1px solid;
+    }
+
+    .success {
+      background-color: green;
+    }
+
+    .fail {
+      background-color: red;
+    }
+  </style>
   <script>
+    function set_class(classname) {
+      const r = document.getElementById('result')
+      r.classList.remove('success', 'fail')
+      if (classname) {
+        r.classList.add(classname)
+      }
+    }
     async function clk() {
+      set_class();
       console.log("Fetching localhost");
-      console.log(await fetch("http://localhost:5500"));      
-      console.log("Fetched");
-    }    
+      try {
+        await fetch("http://localhost:5500");
+        set_class('success')
+      } catch {
+        set_class('fail')
+      }
+    }
     async function clk2() {
+      set_class();
       console.log("Fetching localhost");
-      console.log(await fetch("http://localhost:5500", { targetAddressSpace: "private" }));      
-      console.log("Fetched");
-    }    
+      try {
+        await fetch("http://localhost:5500", { targetAddressSpace: "private" });
+        set_class('success')
+      } catch {
+        set_class('fail')
+      }
+    }
     async function clk3() {
+      set_class();
       console.log("Fetching localhost");
-      console.log(await fetch("http://localhost:5500", { targetAddressSpace: "local" }));      
-      console.log("Fetched");
+      try {
+        await fetch("http://localhost:5500", { targetAddressSpace: "local" });
+        set_class('success')
+      } catch {
+        set_class('fail')
+      }
+    }
+    async function clk4() {
+      set_class();
+      console.log("Fetching localhost");
+      try {
+        await fetch("http://lacolhost.com:5500/");
+        set_class('success')
+      } catch {
+        set_class('fail')
+      }
     }    
   </script>
 </head>
 
 <body>
-  <input type="button" onclick="clk()"> PNA </input>
-  <input type="button" onclick="clk2()"> PNA2 </input>
-  <input type="button" onclick="clk3()"> PNA3 </input>
+  <div id="result" class="none"></div>
+  <div><input type="button" onclick="clk()"> PNA </input></div>
+  <div><input type="button" onclick="clk2()"> PNA2 </input></div>
+  <div><input type="button" onclick="clk3()"> PNA3 </input></div>
+  <div><input type="button" onclick="clk4()"> PNA3 </input></div>
 </body>
 
 </html>
